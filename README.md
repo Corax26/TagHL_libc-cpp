@@ -1,5 +1,6 @@
-TagHL_libc-cpp
+TagHighlight - libc/c++
 ==============
 
 Scripts to generate .taghl files for libc and libc++ for vim's TagHighlight plugin
+
 Generated tags and .taghl are also provided
