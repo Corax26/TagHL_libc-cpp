@@ -17,7 +17,7 @@ Below are specific remarks for both of the scripts.
 
 ### gen\_libc\_posix.sh
 
-In some case (at least in mine, that is under Fedora 18 x64), some POSIX headers are not in `/usr/include` but in the `gcc` headers path. It's very likely that you will have to modify that path (`GCC_HEADERS_PATH`) in the script because it depends on which version of `gcc` you have and under which distrib it runs.
+In some cases (at least in mine, that is under Fedora 18 x64), some POSIX headers are not in `/usr/include` but in the `gcc` headers path. It's very likely that you will have to modify that path (`GCC_HEADERS_PATH`) in the script because it depends on which version of `gcc` you have and under which distrib it runs.
 
 ### gen\_libc++.sh
 
