@@ -17,13 +17,13 @@ do
 	if `g++ -E -std=c++11 -x c++-header $header > tmp.h`
 	then
 		ctags -f $TAGS --append=yes --excmd=number\
-		--c++-kinds=+p  --c++-kinds=-m --extra=+q --fields=+iaS --language-force=c++ \
-		--line-directives=yes -I noexcept -I static_assert+ tmp.h
-		#			^No x: a bug in ctags prevents it from generating entries for extern declarations
-		#			inside a namespace (but there are tons of useless extern template/class declarations
-		#			so it's better to fully disable externs)
+			--c++-kinds=+p  --c++-kinds=-m --extra=+q --fields=+iaS --language-force=c++ \
+			--line-directives=yes -I noexcept -I static_assert+ tmp.h
+		# Note, no x in c++-kinds: a bug in ctags prevents it from generating entries for extern declarations
+		# inside a namespace (but there are tons of useless extern template/class declarations
+		# so it's better to fully disable externs)
 		ctags -f $TAGS --append=yes --excmd=number\
-		--c++-kinds=d --language-force=c++ --line-directives=yes $header
+			--c++-kinds=d --language-force=c++ --line-directives=yes $header
 		for h in `g++ -M -std=c++11 -x c++-header $header | grep -oE '(\S*/bits/\S*)|(/usr/include/[a-z.]*\s)'`
 		do 
 			bits_headers[$h]=1

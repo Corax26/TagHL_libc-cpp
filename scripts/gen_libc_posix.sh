@@ -2,6 +2,7 @@
 TAGS=libc_posix_tags
 TYPES=libc_posix.taghl
 HEADERS=c_posix_headers.txt
+GCC_HEADERS_PATH=/usr/lib/gcc/x86_64-redhat-linux/4.7.2/include
 declare -A bits_headers
 
 rm -f $TAGS
@@ -22,7 +23,7 @@ do
 	else
 		echo Header not found, trying gcc headers
 		ctags -f $TAGS --append=yes --excmd=number --c-kinds=d --fields=+S \
-			--language-force=c /usr/lib/gcc/x86_64-redhat-linux/4.7.2/include/`basename $header` \
+			--language-force=c $GCC_HEADERS_PATH/`basename $header` \
 			&& echo gcc header found
 
 	fi
