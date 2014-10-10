@@ -54,6 +54,7 @@ MatchREs:
 	^\s*#include\s*<stdlib\.h>
 	^\s*#include\s*<string\.h>
 	^\s*#include\s*<strings\.h>
+	^\s*#include\s*<stropts\.h>
 	^\s*#include\s*<sys\/ipc\.h>
 	^\s*#include\s*<syslog\.h>
 	^\s*#include\s*<sys\/mman\.h>

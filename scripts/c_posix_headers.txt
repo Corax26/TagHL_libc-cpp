@@ -49,6 +49,7 @@
 /usr/include/stdlib.h        
 /usr/include/string.h        
 /usr/include/strings.h       
+/usr/include/stropts.h       
 /usr/include/sys/ipc.h       
 /usr/include/syslog.h
 /usr/include/sys/mman.h      

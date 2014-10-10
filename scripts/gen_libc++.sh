@@ -14,7 +14,7 @@ echo Generating $TAGS file
 while read header
 do
 	echo Parsing $header
-	if `g++ -E -std=c++11 -x c++-header $header > tmp.h`
+	if g++ -E -std=c++11 -x c++-header $header > tmp.h
 	then
 		ctags -f $TAGS --append=yes --excmd=number\
 			--c++-kinds=+p  --c++-kinds=-m --extra=+q --fields=+iaS --language-force=c++ \

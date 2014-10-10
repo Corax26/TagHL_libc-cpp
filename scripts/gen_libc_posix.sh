@@ -2,7 +2,7 @@
 TAGS=libc_posix_tags
 TYPES=libc_posix.taghl
 HEADERS=c_posix_headers.txt
-GCC_HEADERS_PATH=/usr/lib/gcc/x86_64-redhat-linux/4.7.2/include
+GCC_HEADERS_PATH=/usr/lib/gcc/x86_64-unknown-linux-gnu/4.9.1/include
 declare -A bits_headers
 
 rm -f $TAGS
@@ -10,7 +10,7 @@ echo Generating $TAGS file
 while read header
 do
 	echo Parsing $header
-	if `gcc -E $header > tmp.h`
+	if gcc -std=gnu11 -D _GNU_SOURCE -E $header > tmp.h
 	then
 		ctags -f $TAGS --append=yes --excmd=number\
 		--c-kinds=+px  --fields=+S --language-force=c --line-directives=yes tmp.h
